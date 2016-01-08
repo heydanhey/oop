@@ -14,4 +14,18 @@ class Card
       puts "- #{answer}"
     end
   end
+
+  def check_answer (user_answer)
+    if user_answer.downcase == @correct_answer.downcase
+      puts
+      puts "Correct!"
+      @solved = true
+      return 1   
+    else
+      puts
+      puts "Incorrect!"
+      return 0
+    end
+  end
+
 end
