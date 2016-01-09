@@ -32,24 +32,28 @@ end
 
 puts
 puts "Thanks for playing. Your score is #{score}."
-puts "Would you like to retry the questions you got wrong? y/n:"
-input = gets.chomp
 
-if input == 'y'
-  p deck
-  deck.used_cards.each do |card|
-    if !card.solved
-      puts "-----------------------------"
-      puts card.question
-      puts "Select from the below options:"
-      card.multiple_choice_answers
-      user_answer = gets.chomp
-      if card.check_answer(user_answer) == 1
-        score += 1
+if score == deck.used_cards.length
+  puts "Congratulations, you got a perfect score!!!!!"
+else
+  puts "Would you like to retry the questions you got wrong? y/n:"
+  input = gets.chomp
+
+  if input == 'y'
+    deck.used_cards.each do |card|
+      if !card.solved
+        puts "-----------------------------"
+        puts card.question
+        puts "Select from the below options:"
+        card.multiple_choice_answers
+        user_answer = gets.chomp
+        if card.check_answer(user_answer) == 1
+          score += 1
+        end
       end
     end
+    puts "Thanks for playing. Your FINAL score is #{score}."
   end
 end
 
-puts "Thanks for playing. Your FINAL score is #{score}."
 puts "The End."
