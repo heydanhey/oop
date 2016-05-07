@@ -20,15 +20,14 @@ class List
   end
       
   def play #play all songs in list
-    @songs.each do |song|
-      song.play
-    end
+    @songs.each { |song| song.play }
+    # @songs.each do |song|
+    #   song.play
+    # end
   end
   
   def shuffle #play all songs in random order
-    @songs.shuffle.each do |song|
-      song.play
-    end
+    @songs.shuffle.each { |song| song.play }
   end
   
   def duration #return total duration

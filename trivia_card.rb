@@ -4,7 +4,7 @@ require_relative "deck"
 trivia_data = {
   "What is the capitial of Illinois?" => ["Springfield", "Chicago", "Rockford"],
   "Is Africa a country or a contienent?" => ["Contienent", "Country"],
-  "Tug of war was once an Olumpic event. True? of False?" => ["True", "False"]
+  "Tug of war was once an Olympic event. True? of False?" => ["True", "False"]
 }
 
 deck = Deck.new(trivia_data)
